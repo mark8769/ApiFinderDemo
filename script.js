@@ -6,18 +6,19 @@ Mark Ortega-Ponce
 
 window.addEventListener("DOMContentLoaded", main)
 
+/* Main entry point of program. */
 function main(){
 
     addCategories();
     addEventListeners();
 }
+/* Add event listeners to submit button. */
 function addEventListeners(){
     let submit = document.getElementById("submit");
     submit.addEventListener("click", apiCall);
 }
-
+/* Build url for api call, and send request. */
 function apiCall(){
-
     let description = document.getElementById("description").value;
     description = description.replace(" ", "+");
     let category = document.getElementById("category").value;
@@ -52,7 +53,7 @@ function apiCall(){
     // Send request.
     requestor.send();
 }
-
+/* Add retrieve information from API call to table if successful. */
 function apiCallHandler(){
 
     // Check response was successful.
@@ -68,6 +69,8 @@ function apiCallHandler(){
     tbody.innerHTML = "";
     let notFound = document.getElementById("notFound");
 
+    /* If entries is null, hide table. Else reveal div
+    letting user know that no entries are found. */
     if (entries == null){
         notFound.removeAttribute("hidden");
         table.setAttribute("hidden", true);
@@ -89,7 +92,7 @@ function apiCallHandler(){
         }
     }
 }
-
+/* Make api call to get categories. */
 function addCategories(){
     let endpoint = "https://api.publicapis.org/categories"
     let requestor = new XMLHttpRequest();
@@ -99,7 +102,8 @@ function addCategories(){
     requestor.open("GET", endpoint);
     requestor.send();
 }
-
+/* Get all the categories that are available from the api and 
+add them to the select element inside the html. */
 function getCategories(){
 
     if (this.status == 200){
