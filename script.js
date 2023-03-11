@@ -53,7 +53,7 @@ function apiCall(){
     // Send request.
     requestor.send();
 }
-/* Add retrieve information from API call to table if successful. */
+/* Add retrieved information from API call to table if successful. */
 function apiCallHandler(){
 
     // Check response was successful.
