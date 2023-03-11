@@ -7,10 +7,19 @@ Mark Ortega-Ponce
 /* Align headers to left border. */
 th{
     text-align: start;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 /* Add spacing between rows. */
 table{
-    border-spacing: 25px;
+    border-collapse: collapse;
+    margin-left: 10px;
+}
+td{
+    padding: 20px 20px 20px 20px;
+}
+tr:nth-child(even){
+    background-color: #eaeaea;
 }
 /* Add padding between text and element.
    Add space around elements. */
@@ -35,6 +44,9 @@ span{
     margin-left: 10px;
 }
 footer{
+    margin-left: 10px;
+}
+#notFound{
     margin-left: 10px;
 }
 /* Make submit button look nice. */
