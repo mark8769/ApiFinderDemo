@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<!--
+Mark Ortega-Ponce
+index.html
+3/10/23
+-->
+<html lang="en">
+    <head>
+        <title>API lookup</title>
+        <meta charset="utf-8">
+        <script src="script.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link href="styles.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <h1>API finder</h1>
+        <!-- Start of inputs -->
+        <div>
+            <label for="description">Search</label>
+            <input autofocus type="text" placeholder="Enter description (optional)" id="description">
+        </div>
+        <div>
+            <label for="category">API Categories</label>
+            <select class="input" id="category" name="category">
+                <option value="all">All</option>
+                <!-- Fill this in with javascript -->
+            </select>
+        </div>
+        <div>
+            <label for="corsSupported">Is Cors Supported?</label>
+            <select class="input" id="corsSupported" name="corsSupported">
+                <option value="all">All</option>
+                <option value="no">No</option>
+                <option value="yes">Yes</option>
+                <option value="unknown">Unknown</option>
+            </select>
+        </div>
+        <div>
+            <input type="submit" id="submit">
+        </div>
+        <!-- End of inputs -->
+        <br>
+        <span>Warning: Using all for categories, cors, and no search will take a long time to load currently.</span>
+        <br>
+        <!-- Api results go inside table -->
+        <div>
+            <table hidden id="table">
+                <thead>
+                    <tr>
+                        <th id="api">API</th>
+                        <th id="desc">Description</th>
+                        <th id="auth">Authentication Method</th>
+                        <th id="https">HTTPS protocol?</th>
+                        <th id="cors">CORS support</th>
+                        <th id="link">Link</th>
+                        <th id="cate">Category</th>
+                    </tr>
+                </thead>
+                <tbody id="results">
+                </tbody>
+            </table>
+            <div id="notFound" hidden>No entries found</div>
+        </div>
+        <!-- End of table -->
+        <br>
+        <footer><div><em>Credits: </em><a href="https://api.publicapis.org/">publicapis.org</a></div></footer>
+    </body>
+</html>
