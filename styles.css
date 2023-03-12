@@ -3,7 +3,10 @@ styles.css
 Mark Ortega-Ponce
 3/10/23
 */
-
+body{
+    margin-left: 30px;
+    margin-right: 30px;
+}
 /* Align headers to left border. */
 th{
     text-align: start;
@@ -13,14 +16,31 @@ th{
 /* Add spacing between rows. */
 table{
     border-collapse: collapse;
-    margin-left: 10px;
+    margin-left: 15px;
 }
 td{
     padding: 20px 20px 20px 20px;
 }
+tr{
+    border: .25px solid black;
+}
 tr:nth-child(even){
     background-color: #eaeaea;
 }
+tr:hover{
+    transform: scale(1.02, 1.15);
+    box-shadow: 0px 0px 3px;
+    background-color: #cacaca;
+}
+/* tr:hover:nth-child(even){
+    transform: scale(1.01,1.15);
+    box-shadow: 0px 0px 3px;
+}
+tr:hover:nth-child(odd){
+    transform: scale(1.01,1.15);
+    box-shadow: 0px 0px 3px;
+    background-color: #dadada;
+} */
 /* Add padding between text and element.
    Add space around elements. */
 input, label, select{
@@ -36,18 +56,9 @@ label{
 #description, #category{
     width: 250px;
 }
-/* Align with rest of content. */
-h1{
-    margin-left: 10px;
-}
-span{
-    margin-left: 10px;
-}
-footer{
-    margin-left: 10px;
-}
-#notFound{
-    margin-left: 10px;
+/* Align with rest of content. (Span, #notFound, table, and h1)*/
+.left-margin{
+    margin-left: 15px;
 }
 /* Make submit button look nice. */
 #submit{
