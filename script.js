@@ -4,7 +4,7 @@ Mark Ortega-Ponce
 3/10/23
 */
 
-window.addEventListener("DOMContentLoaded", main)
+window.addEventListener("DOMContentLoaded", main);
 
 /* Main entry point of program. */
 function main(){
@@ -27,7 +27,7 @@ function apiCall(){
     let descParam = "";
     let categoryParam = "";
     let corsParam = "";
-    let params = ""
+    let params = "";
 
     if (category !== "all"){
         categoryParam = `category=${category}`;
@@ -38,7 +38,7 @@ function apiCall(){
         params += corsParam + "&";
     }
     if (description.length !== 0){
-        descParam = `description=${description}`
+        descParam = `description=${description}`;
         params += descParam + "&";
     }
     let endpoint = "https://api.publicapis.org/entries?";
@@ -77,19 +77,22 @@ function apiCallHandler(){
     }else{
         notFound.setAttribute("hidden", true);
         table.removeAttribute("hidden");
+
+        let htmlStringBuilder = "";
         for (let i=0; i < entries.length; i++){
-            let e = entries[i]
-            let row = "<tr>"
-            row += `<td class="center">${e.API}</td>`
-            row += `<td>${e.Description}</td>`
-            row += `<td>${e.Auth}</td>`
-            row += `<td>${e.HTTPS}</td>`
-            row += `<td>${e.Cors}</td>`
-            row += `<td><a href="${e.Link}">${e.API}</a></td>`
-            row += `<td>${e.Category}</td>`
-            row += "</tr>"
-            tbody.innerHTML += row;
+            let e = entries[i];
+            let row = "<tr>";
+            row += `<td class="center">${e.API}</td>`;
+            row += `<td>${e.Description}</td>`;
+            row += `<td>${e.Auth}</td>`;
+            row += `<td>${e.HTTPS}</td>`;
+            row += `<td>${e.Cors}</td>`;
+            row += `<td><a href="${e.Link}">${e.API}</a></td>`;
+            row += `<td>${e.Category}</td>`;
+            row += "</tr>";
+            htmlStringBuilder += row;
         }
+        tbody.innerHTML = htmlStringBuilder;
     }
 }
 /* Make api call to get categories. */
