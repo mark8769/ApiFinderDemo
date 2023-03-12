@@ -18,7 +18,7 @@ by descriptions.
         <link href="styles.css" rel="stylesheet" type="text/css">
     </head>
     <body>
-        <h1>API finder</h1>
+        <h1 class="left-margin">API finder</h1>
         <!-- Start of inputs -->
         <div>
             <label for="description">Search</label>
@@ -45,12 +45,9 @@ by descriptions.
         </div>
         <!-- End of inputs -->
         <br>
-        <span>Warning: Using all for categories, cors, and no search will take a long time to load currently.</span>
-        <br>
-        <br>
         <!-- Api results go inside table -->
         <div>
-            <table hidden id="table">
+            <table class="left-margin" id="table" hidden>
                 <thead>
                     <tr>
                         <th>API</th>
@@ -65,10 +62,10 @@ by descriptions.
                 <tbody id="results">
                 </tbody>
             </table>
-            <div id="notFound" hidden>No entries found</div>
+            <div class="left-margin" id="notFound" hidden>No entries found</div>
         </div>
         <!-- End of table -->
         <br>
-        <footer><div><em>Credits: </em><a href="https://api.publicapis.org/">publicapis.org</a></div></footer>
+        <footer class="left-margin"><div><em>Credits: </em><a href="https://api.publicapis.org/">publicapis.org</a></div></footer>
     </body>
 </html>
